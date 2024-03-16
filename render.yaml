@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: joe
+    runtime: python
+    plan: free
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app --host 0.0.0.0 --port $PORT
